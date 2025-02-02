@@ -50,7 +50,7 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v4.6.0
       with:
-        name: Test Report
+        name: Chrome Test Report
         path: results/
       
 ##### Executar no navegador firefox
@@ -95,5 +95,5 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v4.6.0
       with:
-        name: Test Report
+        name: FireFox Test Report
         path: results/
