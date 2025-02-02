@@ -8,6 +8,7 @@ Test Teardown    Finalizar sessão
 
 *** Test Cases ***
 Scenario - Add an item to cart
+    [Tags]    smoke
     log in                                          ${USUARIO}    
     ...                                             ${SENHA}
     Sleep    0.6
