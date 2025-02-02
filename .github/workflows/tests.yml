@@ -37,7 +37,7 @@ jobs:
       run: rfbrowser init
 
     - name: Run E2E Tests
-      run: robot -d results/ -i smoke tests
+      run: robot -d results/ -i smoke -v Browser:chromium tests
 
     - name: Robot Reporter
       uses: joonvena/robotframework-reporter-action@v2.4
@@ -53,3 +53,47 @@ jobs:
         name: Test Report
         path: results/
       
+##### Executar no navegador firefox
+
+  firefox:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get code
+      uses: actions/checkout@v4
+
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Setup Python
+      uses: actions/setup-python@v5.4.0
+      with:
+        python-version: 3.12
+
+    - name: Test 
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Browser Init
+      run: rfbrowser init
+
+    - name: Run E2E Tests
+      run: robot -d results/ -i smoke -v Browser:firefox tests
+
+    - name: Robot Reporter
+      uses: joonvena/robotframework-reporter-action@v2.4
+      if: always()
+      with:
+        gh_access_token: ${{secrets.GITHUB_TOKEN}}
+        report_path: results/
+        
+    - name: Upload Report
+      if: always()
+      uses: actions/upload-artifact@v4.6.0
+      with:
+        name: Test Report
+        path: results/
