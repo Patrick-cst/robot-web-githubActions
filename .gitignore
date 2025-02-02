@@ -1,0 +1,13 @@
+# Ignorar a pasta de resultados dos testes
+results/
+
+# Ignorar dependências do Python
+__pycache__/
+
+# Ignorar arquivos do GitHub Actions que não precisam ser versionados
+.github/workflows/*.log
+
+# Ignorar logs gerais e arquivos de cache
+logs/
+*.log
+.cache/
