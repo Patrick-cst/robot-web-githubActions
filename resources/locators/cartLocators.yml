@@ -1,0 +1,2 @@
+cart:
+  btnQuantityOfItemInCart: //span[@data-test='shopping-cart-badge']

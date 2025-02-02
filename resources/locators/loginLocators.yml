@@ -1,0 +1,4 @@
+login:
+  username: user-name
+  cmpPassword: password
+  btnLogin: login-button        

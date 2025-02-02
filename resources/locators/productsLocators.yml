@@ -1,0 +1,2 @@
+products:
+  btnAddProductToCart: //div[@data-test='inventory-item-name'][text()='${PRODUCT_NAME}']//following::button[text()='Add to cart'][1]
