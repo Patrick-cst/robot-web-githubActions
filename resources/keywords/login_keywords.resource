@@ -14,7 +14,7 @@ log in
     ...                                  ${username}
     Input Text                           ${PASSWORD_FIELD}     
     ...                                  ${password}
-    Tirar Screenshot                     os campos 'username' e 'senha' foram preenchidos
+    #Tirar Screenshot                     os campos 'username' e 'senha' foram preenchidos
     Click Button                         ${LOGIN_BUTTON}
 
 
@@ -22,4 +22,4 @@ Verificar Login Bem-Sucedido
     [Arguments]                          ${mensagem}
 
     Element Should Be Visible            ${mensagem}
-    Tirar Screenshot                     validar login efetuado com sucesso
+    #Tirar Screenshot                     validar login efetuado com sucesso

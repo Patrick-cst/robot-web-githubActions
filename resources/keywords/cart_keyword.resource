@@ -17,4 +17,4 @@ Cart icon displays number of products added
     Should Be Equal As Numbers        ${textObtained}    
     ...                               ${expectedText}
     
-    Tirar Screenshot                  Cart icon displays number of products added
+    #Tirar Screenshot                  Cart icon displays number of products added

@@ -12,6 +12,6 @@ Add product to cart
 
     ${btnAddToCart}    Set Variable   //div[@data-test='inventory-item-name'][text()='${product_name}']//following::button[text()='Add to cart'][1]
 
-    Tirar Screenshot                  Add product to cart
+    # Tirar Screenshot                  Add product to cart
     Wait Until Element Is Visible     xpath=${btnAddToCart}
     Click Element                     xpath=${btnAddToCart}
