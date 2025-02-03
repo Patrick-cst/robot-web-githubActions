@@ -6,20 +6,20 @@ Resource    ../../base.resource
 
 
 *** Keywords ***
-log in
+Given to login
     [Arguments]                          ${username}           
     ...                                  ${password}
     
-    Input Text                           ${USERNAME_FIELD}     
+    Input Text                           ${login.cmpUsername}     
     ...                                  ${username}
-    Input Text                           ${PASSWORD_FIELD}     
+    Input Text                           ${login.cmpPassword}     
     ...                                  ${password}
-    #Tirar Screenshot                     os campos 'username' e 'senha' foram preenchidos
-    Click Button                         ${LOGIN_BUTTON}
+    Tirar Screenshot                     os campos 'username' e 'senha' foram preenchidos
+    Click Button                         ${login.btnLogin}
 
 
-Verificar Login Bem-Sucedido
+Then check the successful login message
     [Arguments]                          ${mensagem}
 
     Element Should Be Visible            ${mensagem}
-    #Tirar Screenshot                     validar login efetuado com sucesso
+    Tirar Screenshot                     validar login efetuado com sucesso

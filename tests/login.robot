@@ -2,13 +2,13 @@
 
 Resource         ../base.resource
 
-Test Setup       Iniciar sessão
-Test Teardown    Finalizar sessão
+Test Setup       Start Browser
+Test Teardown    End Session
 
 *** Test Cases ***
-Scenario Teste de Login Válido
+Valid Login Test
     [Tags]    smoke
 
-    log in                          ${USUARIO}    
-    ...                             ${SENHA}
-    Verificar Login Bem-Sucedido    ${TITULO_SWAGLABS}
+    Given to login                              ${USUARIO}    
+    ...                                         ${SENHA}
+    Then check the successful login message     ${TITULO_SWAGLABS}

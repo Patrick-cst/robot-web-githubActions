@@ -4,13 +4,13 @@ Resource    ../base.resource
 
 
 *** Keywords ***
-Iniciar sessão
+Start Browser
     [Documentation]    Iniciando sessão
 
     Configurar Navegador
 
-Finalizar sessão  
+End Session 
     [Documentation]    Finalizando sessão 
     
-   # Gerar Pdf Evidencias
+    Gerar Pdf Evidencias
     Close Browser 

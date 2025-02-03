@@ -7,7 +7,7 @@ Resource         ../../base.resource
 
 
 *** Keywords ***
-Cart icon displays number of products added
+Then cart icon displays number of products added
     [Documentation]     Cart icon displays number of products added
     [Arguments]                       ${expectedText}
     
@@ -17,4 +17,14 @@ Cart icon displays number of products added
     Should Be Equal As Numbers        ${textObtained}    
     ...                               ${expectedText}
     
-    #Tirar Screenshot                  Cart icon displays number of products added
+    Tirar Screenshot                  Cart icon displays number of products added
+
+When add a product to the cart
+    [Documentation]    Add product to cart
+    [Arguments]                       ${productName}
+
+    ${btnAddToCart}    Set Variable   //div[@data-test='inventory-item-name'][text()='${product_name}']//following::button[text()='Add to cart'][1]
+
+    Tirar Screenshot                  Add product to cart
+    Wait Until Element Is Visible     xpath=${btnAddToCart}
+    Click Element                     xpath=${btnAddToCart}
